@@ -4,7 +4,11 @@ from .forms import TestForm
 
 # Create your views here.
 def index(request):
-    return render(request, 'test_app/index.html')
+    tests = Test.objects.all()
+    context = {
+        'tests' : tests
+    }
+    return render(request, 'test_app/index.html', context)
 
 def create(request):
     if request.method =='POST':

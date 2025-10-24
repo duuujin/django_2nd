@@ -12,7 +12,7 @@
 <p>삭제하고 싶은거냐?</p>
 <form action="{% url "test_app:delete" test.pk %}" method='POST'>
     {% csrf_token %}
-    <input type="submit" value="삭제">
+    <input type="submit" value="삭제할거임">
 </form>
 
 {% endblock content %}

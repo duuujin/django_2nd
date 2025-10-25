@@ -5,5 +5,14 @@
 <p>이름은 {{test.name}}인거냐?</p>
 <p>이메일은 {{test.email}}인거냐?</p>
 <p>만든날짜는 {{test.create_at}}인거냐?</p>
+<br>
+<p>이름이나 이메일 바꾸고 싶으면 여기로 가던가</p>
+<a href="{% url "test_app:update" test.pk %}">[수정]</a>
+
 <p>삭제하고 싶은거냐?</p>
+<form action="{% url "test_app:delete" test.pk %}" method='POST'>
+    {% csrf_token %}
+    <input type="submit" value="삭제">
+</form>
+
 {% endblock content %}
